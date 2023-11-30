@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS -- provide db name
-CREATE DATABASE -- provide db name
+DROP DATABASE IF EXISTS andromeda_db;
+CREATE DATABASE andromeda_db;
