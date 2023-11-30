@@ -34,7 +34,7 @@ User.init(
                 len: [8],
             },
         },
-        signupDate: {
+        createdDate: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
