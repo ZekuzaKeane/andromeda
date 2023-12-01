@@ -1,1 +1,30 @@
-<h1>Test H1</h1>
+<!-- homepage.handlebars -->
+
+{{#if session.logged_in}}
+    <h2>Hello, {{session.user.userName}}!</h2>
+    <section>
+        <h3>Your Constellations</h3>
+        <ul>
+            {{#each session.user.constellations}}
+                <li>{{name}}</li>
+                <!-- Display more constellation details as needed -->
+            {{/each}}
+        </ul>
+    </section>
+    <section>
+        <h3>Your Comments</h3>
+        <ul>
+            {{#each session.user.comments}}
+                <li>{{content}}</li>
+                <!-- Display more comment details as needed -->
+            {{/each}}
+        </ul>
+    </section>
+    <!-- Add more sections for other user-related content -->
+    <a href="/create-constellation">Create Constellation</a>
+{{else}}
+    <h2>Welcome to Constellation</h2>
+    <p>Explore the constellations created by our community. Sign up to create your own!</p>
+    <a href="/signup">Sign Up</a>
+    <a href="/login">Login</a>
+{{/if}}
