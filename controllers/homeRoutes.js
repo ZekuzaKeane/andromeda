@@ -4,19 +4,18 @@ const { Constellation, User } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        const constellationData = await Constellation.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
-        });
+        // const constellationData = await Constellation.findAll({
+        //     include: [
+        //         {
+        //             model: User,
+        //             attributes: ['username'],
+        //         },
+        //     ],
+        // });
         // serialize the data
-        const constellations = constellationData.map((constellation) => constellation.get({ plain: true }));
-        console.log(constellations);
-
-        res.render('homepage', { constellations });
+        // const constellations = constellationData.map((constellation) => constellation.get({ plain: true }));
+        // console.log(constellations);
+        res.render('homepage');
     } catch (err) {
         res.status(500).json(err);
     }
