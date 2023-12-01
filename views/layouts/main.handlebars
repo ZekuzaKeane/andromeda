@@ -36,14 +36,16 @@
 
     <main class="container mt-4">
         <!-- Check if user is logged in -->
-        {{#if session.logged_in}}
+        {{!-- {{#if session.logged_in}}
             <p>Hello, {{session.user.userName}}!</p>
             <!-- Include user dashboard content?? Not sure what we have in mind yet -->
             {{> homepage}}
         {{else}}
             <!-- Include content for non-logged-in users -->
-            {{{body}}}
-        {{/if}}
+            
+        {{/if}} --}}
+
+        {{{body}}}
     </main>
 
     <footer class="mt-4 text-center">
