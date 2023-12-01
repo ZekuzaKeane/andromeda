@@ -1,1 +1,1 @@
-// comment  or 'pinned note' for profile. TBD 
+// Pinned status/message for profile
