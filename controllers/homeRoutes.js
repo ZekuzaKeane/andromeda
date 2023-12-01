@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
                 },
             ],
         });
-
         // serialize the data
         const constellations = constellationData.map((constellation) => constellation.get({ plain: true }));
         console.log(constellations);
