@@ -12,17 +12,17 @@ Social.belongsTo(User, { foreignKey: 'user_id' });
 //
 
 Constellation.hasOne(Social, { foreignKey: 'constellation_id' });
-Social.belongsTo(Constellation, {foreignKey: 'constellation_id' })
+Social.belongsTo(Constellation, {foreignKey: 'constellation_id' });
 
 //
 
-User.hasOne(Constellation, { foreignKey: 'user_id', onDelete: 'CASCADE' })
-Constellation.belongsTo(User, { foreignKey: ''})
+User.hasOne(Constellation, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+Constellation.belongsTo(User, { foreignKey: ''});
 
 //
 
-User.hasOne(Status, {foreignKey: 'user_id' })
-Status.belongsTo(User, {foreignKey: 'user_id' })
+User.hasOne(Status, {foreignKey: 'user_id' });
+Status.belongsTo(User, {foreignKey: 'user_id' });
 
 //
 

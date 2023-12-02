@@ -39,18 +39,6 @@ Status.init(
                 key: 'id',
             },
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                len: [4, 20],
-            },
-            references: {
-                model: 'user',
-                key: 'username',
-            },
-        },
     },
     {
         sequelize,
