@@ -3,7 +3,6 @@
 // coordinates (x/y) = position of the constellation
 
 const { Model, DataTypes } = require('sequelize');
-// const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Constellation extends Model { }
@@ -29,6 +28,7 @@ Constellation.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
+            unique: true,
             references: {
                 model: 'user',
                 key: 'id',
@@ -54,7 +54,6 @@ Constellation.init(
         modelName: 'constellation',
     }
 );
-
 
 
 module.exports = Constellation;
