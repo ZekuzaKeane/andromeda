@@ -16,8 +16,12 @@ Constellation.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        created_date: {
+        name: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        created_date: {
+            type: DataTypes.DATE,
             allowNull: false,
             validate: {
                 isDate: true,
@@ -33,9 +37,13 @@ Constellation.init(
         status: {
             type: DataTypes.STRING,
             allowNull: true,
-            validation: {
+            validate: {
                 len: [2, 280],
             },
+            references: {
+                model: 'status',
+                key: 'status',
+            }
         },
     },
     {

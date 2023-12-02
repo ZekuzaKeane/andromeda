@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-
 class User extends Model { }
+
+
 
 User.init(
     {
@@ -15,6 +16,7 @@ User.init(
         username: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
             validate: {
                 len: [4, 20],
             },
@@ -35,7 +37,7 @@ User.init(
             },
         },
         created_date: {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull: false,
             validate: {
                 isDate: true,
@@ -60,7 +62,6 @@ User.init(
         modelName: 'user',
     }
 );
-
 
 
 module.exports = User;
