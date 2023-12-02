@@ -6,12 +6,12 @@ const Social = require('./Social');
 
 // Associations:
 
-User.hasMany(Social, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+User.hasOne(Social, { foreignKey: 'user_id', onDelete: 'CASCADE' });
 Social.belongsTo(User, { foreignKey: 'user_id' });
 
 //
 
-Constellation.hasMany(Social, { foreignKey: 'constellation_id' });
+Constellation.hasOne(Social, { foreignKey: 'constellation_id' });
 Social.belongsTo(Constellation, {foreignKey: 'constellation_id' })
 
 //
