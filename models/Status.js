@@ -62,5 +62,4 @@ Status.init(
 );
 
 
-
 module.exports = Status;

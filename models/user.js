@@ -43,6 +43,15 @@ User.init(
                 isDate: true,
             },
         },
+        constellation_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            unique: true,
+            references: {
+                model: 'constellation',
+                key: 'id'
+            },
+        },
     },
     {
         hooks: {
