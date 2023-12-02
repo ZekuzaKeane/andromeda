@@ -1,9 +1,9 @@
 <!-- constellation-details.handlebars -->
 
-<div class="constellation-details">
+<div class="constellation-card">
   <h2>{{user.username}}'s Constellation</h2>
   
-  <div class="social-links">
+  <div class="socials">
     <h3>Social Media</h3>
     <ul>
       {{#if user.social.twitter}}
@@ -22,7 +22,7 @@
     </ul>
   </div>
   
-  <div class="constellation-status">
+  <div class="status">
     <h3>Constellation Status</h3>
     <p>{{user.constellation.status}}</p>
   </div>
