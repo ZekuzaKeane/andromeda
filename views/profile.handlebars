@@ -1,0 +1,52 @@
+<!-- profile.handlebars -->
+
+{{! Check if the data is still loading }}
+{{#if loading}}
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+{{else}}
+  {{#if session.logged_in}}
+    <div class="profile-container">
+      <h2>Hello, {{session.user.userName}}!</h2>
+
+      <section>
+        <h3>Your Profile</h3>
+        <p>Email: {{session.user.email}}</p>
+        <!-- Add more user details as needed -->
+      </section>
+
+      <section>
+        <h3>Your Constellations</h3>
+        <ul>
+          {{#each session.user.constellations}}
+            <li>
+              <strong>{{name}}</strong>
+              <p>Created on: {{created_date}}</p>
+              <!-- Display more constellation details as needed -->
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+
+      <section>
+        <h3>Your Comments</h3>
+        <ul>
+          {{#each session.user.comments}}
+            <li>{{content}}</li>
+            <!-- Display more comment details as needed -->
+          {{/each}}
+        </ul>
+      </section>
+
+      <!-- Add more sections for other user-related content -->
+      <a href="/create-constellation">Create Constellation</a>
+    </div>
+  {{else}}
+    <h2>Welcome to Constellation</h2>
+    <p>Explore the constellations created by our community. Sign up to create
+      your own!</p>
+    <a href="/signup">Sign Up</a>
+    <a href="/login">Login</a>
+  {{/if}}
+{{/if}}
