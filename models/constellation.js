@@ -45,6 +45,14 @@ Constellation.init(
                 key: 'status',
             }
         },
+        social_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'social',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
