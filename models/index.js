@@ -1,10 +1,10 @@
-const User = require('./User');
-const Status = require('./Status'); 
-const Constellation = require('./Constellation');
+// const User = require('./User');
+// const Status = require('./Status'); 
+// const Constellation = require('./Constellation');
 
-// List associations below 
-
-
+// // List associations below 
 
 
-module.exports = { User, Status, Constellation };
+
+
+// module.exports = { User, Status, Constellation };
