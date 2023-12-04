@@ -51,4 +51,6 @@ router.post('/logout', (req, res) => {
     }
 });
 
+// post route for 'sign up' needed?
+
 module.exports = router;
