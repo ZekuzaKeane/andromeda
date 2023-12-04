@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
-const hbs = exphbs.create({  }); // add back 'helpers'
+const hbs = exphbs.create({  }); // add 'helpers' back into brackets once actually using them
 
 // Should be worked on some
 const sess = {
