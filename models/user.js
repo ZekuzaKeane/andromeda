@@ -52,6 +52,25 @@ User.init(
                 key: 'id'
             },
         },
+        social_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'social',
+                key: 'id',
+            },
+        },
+        status: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [2, 280],
+            },
+            references: {
+                model: 'status',
+                key: 'status',
+            }
+        },
     },
     {
         hooks: {
