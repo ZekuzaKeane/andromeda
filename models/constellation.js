@@ -1,9 +1,9 @@
 // user_id = foreign key links to user model
 // status = pinned note / daily status shown on a users profile. Set max limit of 280 chars like a tweet
-// coordinates (x/y) = position of the constellation
-
+// Add 'coordinates' (x/y)?? = position of the constellation
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 
 class Constellation extends Model { }
 

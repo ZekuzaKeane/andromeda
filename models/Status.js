@@ -3,9 +3,9 @@
 // ^^^ 280 max char to match twitter
 
 // Should we update the primary key to the ID? if so, will need to update other models' 'status' foreign keys to match
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 
 class Status extends Model { }
 
