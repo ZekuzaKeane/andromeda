@@ -1,9 +1,8 @@
 // Pinned Status/message for profile/constellation display
-
 // status = primary key, so it may be a foreign key to Constellation model 
 // ^^^ 280 max char to match twitter
-// user_id = foreign key links to User model
-// username = foreign key linked to User model (in case we want to have the user name by the status etc)
+
+// Should we update the primary key to the ID? if so, will need to update other models' 'status' foreign keys to match
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
