@@ -23,8 +23,8 @@ const sess = {
     secure: false,
     sameSite: 'strict',
   },
-  resave: false,
-  saveUninitialized: true,
+  resave: false,  // don't save session if unmodified
+  saveUninitialized: true, // create session EVEN if nothing is stored
   store: new SequelizeStore({
     db: sequelize
   })
