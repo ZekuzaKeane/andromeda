@@ -2,8 +2,45 @@
 {{!-- Please give INPUT fields for Username and Password needed for signup an ID of "#username-signup" & "#password-signup "--}}
 {{!-- If third field is to be required for email to sign up, let Nic  know --}}
 
+   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Signup</title>
 
+    <style>
+      body { background-color: #f5f5f5; font-family: 'Space Mono', monospace;
+      color: #333; margin: 0; padding: 0; display: flex; align-items: center;
+      justify-content: center; background-image:
+      url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover; background-position: center; background-repeat:
+      no-repeat; height: 100vh; } form { background-color: #fff; padding: 20px;
+      border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } label {
+      display: block; margin-bottom: 8px; } input { width: 100%; padding: 8px;
+      margin-bottom: 16px; box-sizing: border-box; } button { background-color:
+      #4caf50; color: #fff; padding: 10px 15px; border: none; border-radius:
+      4px; cursor: pointer; }
+    </style>
+
+  </head>
+
+
+    <form class="signup-form" action="/signup" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      {{!-- <label for="email address">Email:</label>
+      <input type="text" id="email" name="email" required /> --}}
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Signup</button>
+    </form>
 
 
 {{!-- Custom script  runs when signup form is submitted, in public/js/signup.js --}}
-{{!-- <script src="./js/signup.js"></script> --}}
+<script src="./js/signup.js"></script>
