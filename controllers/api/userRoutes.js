@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.post('./login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { username: req.body.username } });
 
@@ -34,7 +34,7 @@ router.post('./login', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-            req.json({ user: userData, message: `You've successfully logged in!` });
+            res.json({ user: userData, message: `You've successfully logged in!` });
         });
     } catch (err) {
         res.status(400).json(err);

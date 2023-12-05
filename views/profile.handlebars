@@ -8,11 +8,12 @@
 {{else}}
   {{#if session.logged_in}}
     <div class="profile-container">
-      <h2>Hello, {{session.user.userName}}!</h2>
+      <h2>Hello, {{username}}!</h2>
 
       <section>
         <h3>Your Profile</h3>
-        <p>Email: {{session.user.email}}</p>
+        <p>Email: {{email}}</p>
+        <p>Twitter: {{social.twitter}}</p>
         <!-- Add more user details as needed -->
       </section>
 
@@ -22,7 +23,6 @@
           {{#each session.user.constellations}}
             <li>
               <strong>{{name}}</strong>
-              <p>Created on: {{created_date}}</p>
               <!-- Display more constellation details as needed -->
             </li>
           {{/each}}
@@ -30,7 +30,7 @@
       </section>
 
       <section>
-        <h3>Your Comments</h3>
+        <h3>Your Status:</h3>
         <ul>
           {{#each session.user.comments}}
             <li>{{content}}</li>
