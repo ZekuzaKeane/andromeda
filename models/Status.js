@@ -14,7 +14,6 @@ Status.init(
         status: {
             type: DataTypes.STRING,
             allowNull: true,
-            primaryKey: true,
             validate: {
                 len: [2, 280],
             },
@@ -23,6 +22,7 @@ Status.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
+            primaryKey: true
         },
         created_date: {
             type: DataTypes.DATE,

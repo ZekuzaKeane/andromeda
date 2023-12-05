@@ -78,14 +78,6 @@ Social.init(
                 key: 'id',
             },
         },
-        constellation_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'constellation',
-                key: 'id'
-            },
-        },
     },
     {
         sequelize,
