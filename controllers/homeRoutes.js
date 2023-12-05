@@ -29,8 +29,7 @@ router.get('/', async (req, res) => {
 });
 
 
-///// ---> clicking contellation from homepages brings to PROFILE - no need for constellation/id route, right?
-
+//// clicking 'view profile' from one of the cards on the homepage brings you to that users profile
 // router.get('/constellation/:id', async (req, res) => {
 //     try {
 //         const constellationData = await User.findbyPK(req.params.id, {
