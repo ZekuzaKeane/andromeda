@@ -51,6 +51,29 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// post route for 'sign up' needed?
+// route for new user signup
+router.post('/signup', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+
+        const existingUserCheck = await User.findOne({ where: { username } });
+
+        if(existingUserCheck) {
+            return res.status(400).json({ message: 'Username already exists!' })
+        }
+
+        const newUser = await User.create({ username, password });
+
+        // log user in directly after signing up
+        req.session.save(() => {
+            req.session.user_id = newUser.id;
+            req.session.logged_in = true;
+            res.status(201).json({ user: newUser, message: "User created successfully!" });
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "Internal server error. Uhoh!" });
+    }
+});
 
 module.exports = router;
