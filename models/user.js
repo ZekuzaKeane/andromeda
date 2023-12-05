@@ -38,17 +38,9 @@ User.init(
         },
         created_date: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isDate: true,
-            },
-        },
-        social_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'social',
-                key: 'id',
             },
         },
     },
