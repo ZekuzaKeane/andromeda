@@ -1,43 +1,56 @@
 const router = require('express').Router();
-const { Constellation, User } = require('../models');
+const { Social, User, Status } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        // const constellationData = await Constellation.findAll({
-        //     include: [
-        //         {
-        //             model: User,
-        //             attributes: ['username'],
-        //         },
-        //     ],
-        // });
-        // serialize the data
-        // const constellations = constellationData.map((constellation) => constellation.get({ plain: true }));
-        // console.log(constellations);
-        res.render('homepage');
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.get('/constellation/:id', async (req, res) => {
-    try {
-        const constellationData = await Constellation.findbyPK(req.params.id, {
+        const constellationData = await User.findAll({
+            attributes: { exclude: ['password'] },
             include: [
                 {
-                    model: User,
-                    attributes: ['username'],
+                    model: Social,
                 },
+                {
+                    model: Status,
+                },   
             ],
         });
-
-        const constellation = constellationData.get({ plain: true });
-        res.render('profile', { constellation });
+        // serialize the data
+        console.log('HELLO');
+        console.log(constellationData);
+        // process.exit(0);
+        const constellations = constellationData.map((constellation) => constellation.get({ plain: true }));
+        console.log('HELLO CONSTELLATIONS');
+        console.log(constellations);
+        res.render('homepage', {constellations});
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+
+///// ---> clicking contellation from homepages brings to PROFILE - no need for constellation/id route, right?
+
+// router.get('/constellation/:id', async (req, res) => {
+//     try {
+//         const constellationData = await User.findbyPK(req.params.id, {
+//             attributes: { exclude: ['password'] },
+//             include: [
+//                 {
+//                     model: Social,
+//                 },
+//                 {
+//                     model: Status,
+//                 },   
+//             ],
+//         });
+
+//         const constellation = constellationData.get({ plain: true });
+//         res.render('profile', { constellation });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 router.get('/profile', async (req, res) => {
     try {

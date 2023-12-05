@@ -1,5 +1,6 @@
 [
     {
+        "user_id":1,
         "status": "This is a seeded status, to see if it works. If you can see this, its pretty much working!"
     }
 ]

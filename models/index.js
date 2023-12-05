@@ -6,13 +6,12 @@ const Social = require('./Social');
 
 // Associations:
 
-User.hasOne(Social, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+User.hasOne(Social, { foreignKey: 'user_id' });
 Social.belongsTo(User, { foreignKey: 'user_id' });
 
 
 User.hasOne(Status, {foreignKey: 'user_id' });
 Status.belongsTo(User, {foreignKey: 'user_id' });
 
-//
 
 module.exports = { User, Status, Social };
