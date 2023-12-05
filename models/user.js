@@ -43,15 +43,6 @@ User.init(
                 isDate: true,
             },
         },
-        constellation_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            unique: true,
-            references: {
-                model: 'constellation',
-                key: 'id'
-            },
-        },
         social_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -59,17 +50,6 @@ User.init(
                 model: 'social',
                 key: 'id',
             },
-        },
-        status: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [2, 280],
-            },
-            references: {
-                model: 'status',
-                key: 'status',
-            }
         },
     },
     {
