@@ -16,12 +16,7 @@ router.get('/', async (req, res) => {
             ],
         });
         // serialize the data
-        console.log('HELLO');
-        console.log(constellationData);
-        // process.exit(0);
         const constellations = constellationData.map((constellation) => constellation.get({ plain: true }));
-        console.log('HELLO CONSTELLATIONS');
-        console.log(constellations);
         res.render('homepage', {constellations});
     } catch (err) {
         res.status(500).json(err);
@@ -30,7 +25,7 @@ router.get('/', async (req, res) => {
 
 
 //// clicking 'view profile' from one of the cards on the homepage brings you to that users profile
-// router.get('/constellation/:id', async (req, res) => {
+// router.get('/profile/:id', async (req, res) => {
 //     try {
 //         const constellationData = await User.findbyPK(req.params.id, {
 //             attributes: { exclude: ['password'] },
