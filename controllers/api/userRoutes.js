@@ -51,18 +51,24 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// route for new user signup
+// New user signup
+// if team decides on using email for this page, will need to adjust  route to match that
 router.post('/signup', async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, email, password } = req.body;
 
-        const existingUserCheck = await User.findOne({ where: { username } });
+        const existingUserCheck = await User.findOne({ 
+            where: { 
+            username: username,
+            email: email,
+        } 
+    });
 
         if(existingUserCheck) {
-            return res.status(400).json({ message: 'Username already exists!' })
+            return res.status(400).json({ message: 'Username or Email already exists! Both must be unique' })
         }
 
-        const newUser = await User.create({ username, password });
+        const newUser = await User.create({ username, email, password });
 
         // log user in directly after signing up
         req.session.save(() => {
