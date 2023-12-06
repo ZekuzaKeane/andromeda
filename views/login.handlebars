@@ -1,4 +1,4 @@
-<html lang="en">
+
 
   <head>
     <meta charset="UTF-8" />
@@ -23,22 +23,10 @@
       4px; cursor: pointer; }
     </style>
 
-    {{! <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form =
-                document.querySelector('form'); form.addEventListener('submit', function
-                    (event) {
-                        event.preventDefault(); // Client-side validation const username
-      = form.querySelector('#username').value; const password =
-                        form.querySelector('#password').value; if (!username || !password) {
-                            alert('Please fill in all fields.'); return;
-                        } // You can add more validation rules if needed // Simulating form submission (replace with actual AJAX request) // For demonstration purposes, we'll show an alert for successful submission alert('Login successful!'); // Replace this with your actual handling logic
-        }); });
-    </script> }}
   </head>
 
-  <body>
-    <form action="/login" method="post">
+
+    <form class="login-form" action="/login" method="post">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required />
 
@@ -47,6 +35,5 @@
 
       <button type="submit">Login</button>
     </form>
-  </body>
 
-</html>
+<script src="./js/login.js"></script>

@@ -31,7 +31,14 @@
   {{else}}
     <h2>Welcome to Constellation</h2>
     <p>Explore the constellations created by our community. Sign up to create your own!</p>
-    <a href="/signup">Sign Up</a>
-    <a href="/login">Login</a>
+    {{!-- <a href="/signup">Sign Up</a>
+    <a href="/login">Login</a> --}}
+
   {{/if}}
 {{/if}}
+
+
+
+{{#each constellations as |constellation|}}
+{{> constellation-details}}
+{{/each}}

@@ -1,29 +1,11 @@
 <!-- constellation-details.handlebars -->
 
-<div class="constellation-card">
-  <h2>{{user.username}}'s Constellation</h2>
   
-  <div class="socials">
-    <h3>Socials: </h3>
-    <ul>
-      {{#if user.social.twitter}}
-        <li><a href="{{user.social.twitter}}" target="_blank">Twitter</a></li>
-      {{/if}}
-      
-      {{#if user.social.instagram}}
-        <li><a href="{{user.social.instagram}}" target="_blank">Instagram</a></li>
-      {{/if}}
-      
-      {{#if user.social.tiktok}}
-        <li><a href="{{user.social.tiktok}}" target="_blank">TikTok</a></li>
-      {{/if}}
-      
-      <!-- Add links for other social media platforms -->
-    </ul>
-  </div>
-  
-  <div class="status">
-    <h3>Constellation Status</h3>
-    <p>{{user.constellation.status}}</p>
+<div class="card text-white bg-dark" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="person amongst stars" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">@{{username}}</h5>
+    <p class="card-text small">"{{status.status}}"</p>
+    <a href="/profile/{{id}}" class="btn btn-primary">View Profile</a>
   </div>
 </div>

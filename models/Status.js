@@ -26,7 +26,7 @@ Status.init(
         },
         created_date: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isDate: true,
             },
