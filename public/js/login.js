@@ -2,8 +2,8 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Values being pulled from the login form
-  const username = document.querySelector("#username").value.trim();
-  const password = document.querySelector("#password").value.trim();
+  const username = document.querySelector("#username-login").value.trim();
+  const password = document.querySelector("#password-login").value.trim();
 
   if (username && password) {
     // Sends POST request to the API
@@ -12,6 +12,8 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
+
+    console.log("Request Data:", JSON.stringify({ username, password }));
 
     if (response.ok) {
       // If success, redirect to profile page

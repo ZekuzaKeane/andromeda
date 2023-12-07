@@ -13,11 +13,13 @@ const signupFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    if (response.ok) {
+    const responseData = await response.json();
+
+    if (response.ok && responseData.message === "User created successfully!") {
       console.log("Successful signup!");
       document.location.replace("/login");
     } else {
-      alert(response.statusText);
+      alert(responseData.message || response.statusText);
     }
   }
 };
