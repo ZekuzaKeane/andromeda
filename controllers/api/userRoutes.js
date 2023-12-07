@@ -64,7 +64,6 @@ router.post("/logout", (req, res) => {
 });
 
 // New user signup
-// if team decides on using email for this page, will need to adjust  route to match that
 router.post("/signup", async (req, res) => {
   try {
     const { username, email, password } = req.body;
