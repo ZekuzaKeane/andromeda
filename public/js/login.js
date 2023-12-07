@@ -16,8 +16,15 @@ const loginFormHandler = async (event) => {
     console.log("Request Data:", JSON.stringify({ username, password }));
 
     if (response.ok) {
-      // If success, redirect to profile page
-      document.location.replace("/profile");
+      const responseData = await response.json();
+      // Check if the res includes 'redirect' field
+      if (responseData.redirect) {
+        // If 'redirect' field is there, navigate to the provided URL
+        document.location.replace(responseData.redirect);
+      } else {
+        // If redirect field isn't present, navigate to a default location below
+        document.location.replace("/profile");
+      }
     } else {
       alert(response.statusText);
     }
