@@ -45,7 +45,7 @@
             class="text-center mb-4"
           ><i>Create an account and join the community.</i></p>
 
-          <form action="/signup" method="post">
+          <form action="/api/users/signup" method="post">
             <div
               style="text-shadow: 0 0 10px rgba(247, 243, 227, 0.8);"
               class="form-group"
@@ -101,7 +101,7 @@
             <button
               style="background-color: #43AA8B;"
               type="submit"
-              class="btn btn-success btn-block"
+              class="btn btn-success btn-block signup-form"
             >Sign Up</button>
             <p class="text-center mt-3">Already Have An Account?
               <a href="/login">Login!</a></p>
@@ -110,17 +110,7 @@
       </div>
     </div>
 
-    <script>
-      const showPasswordIcon = document.querySelector('#showPassword'); const
-      hidePasswordIcon = document.querySelector('#hidePassword'); const password
-      = document.querySelector('#password-signup');
-      showPasswordIcon.addEventListener('click', function () {
-      password.setAttribute('type', 'text'); showPasswordIcon.style.display =
-      'none'; hidePasswordIcon.style.display = 'block'; });
-      hidePasswordIcon.addEventListener('click', function () {
-      password.setAttribute('type', 'password'); showPasswordIcon.style.display
-      = 'block'; hidePasswordIcon.style.display = 'none'; });
-    </script>
   </body>
 
+<script src="./js/login.js"></script>
 </html>
