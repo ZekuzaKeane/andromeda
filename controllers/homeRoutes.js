@@ -19,7 +19,8 @@ router.get("/", async (req, res) => {
     const constellations = constellationData.map((constellation) =>
       constellation.get({ plain: true })
     );
-    res.render("homepage", { constellations });
+    console.log('Session HERE: ', req.session);
+    res.render("homepage", { constellations , logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
