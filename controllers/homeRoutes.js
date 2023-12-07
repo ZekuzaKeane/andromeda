@@ -24,31 +24,9 @@ router.get('/', async (req, res) => {
 });
 
 
-//// clicking 'view profile' from one of the cards on the homepage brings you to that users profile
-// router.get('/profile/:id', async (req, res) => {
-//     try {
-//         const constellationData = await User.findbyPK(req.params.id, {
-//             attributes: { exclude: ['password'] },
-//             include: [
-//                 {
-//                     model: Social,
-//                 },
-//                 {
-//                     model: Status,
-//                 },   
-//             ],
-//         });
-
-//         const constellation = constellationData.get({ plain: true });
-//         res.render('profile', { constellation });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
 router.get('/profile', async (req, res) => {
     try {
-        userData = await User.findbyPK(req.session.user_id, {
+        userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
             include: [
                 {
@@ -63,6 +41,30 @@ router.get('/profile', async (req, res) => {
         const user = UserData.get({ plain: true });
 
         res.render('profile', { user });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+//// clicking 'view profile' from one of the cards on the homepage brings you to that users profile
+router.get('/profile/:id', async (req, res) => {
+    try {
+        console.log('iD: ', req.params.id);
+        const constellationData = await User.findByPk(req.params.id, {
+            attributes: { exclude: ['password'] },
+            include: [
+                {
+                    model: Social,
+                },
+                {
+                    model: Status,
+                },   
+            ],
+        });
+        console.log(constellationData);
+        const constellation = constellationData.get({ plain: true });
+        res.render('profile', { constellation });
     } catch (err) {
         res.status(500).json(err);
     }
