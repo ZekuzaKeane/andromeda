@@ -1,29 +1,29 @@
 [
-    {
-        "user_id":1,
-        "twitter": "Nokay_ttv",
-        "instagram": "nicanthoni",
-        "github": "nicanthoni",
-        "youtube": "nicolasdiaz6673",
-        "tiktok": "nokay_ttv",
-        "twitch": "nokayttv"
-    },
-    {
-        "user_id":2,
-        "twitter": "testtwitter1",
-        "instagram": "testIG1",
-        "github": "testGH1",
-        "youtube": "testYT1",
-        "tiktok": "testtiktok1",
-        "twitch": "testtwitch1"
-    },
-    {
-        "user_id":3,
-        "twitter": "testtwitter2",
-        "instagram": "testIG2",
-        "github": "testGH2",
-        "youtube": "testYT2",
-        "tiktok": "testtiktok2",
-        "twitch": "testtwitch2"
-    }
+  {
+    "user_id": 1,
+    "twitter": "Nokay_ttv",
+    "instagram": "nicanthoni",
+    "github": "nicanthoni",
+    "youtube": "nicolasdiaz6673",
+    "tiktok": "nokay_ttv",
+    "twitch": "nokayttv"
+  },
+  {
+    "user_id": 2,
+    "twitter": "testtwitter1",
+    "instagram": "testIG1",
+    "github": "testGH1",
+    "youtube": "testYT1",
+    "tiktok": "testtiktok1",
+    "twitch": "testtwitch1"
+  },
+  {
+    "user_id": 3,
+    "twitter": "testtwitter2",
+    "instagram": "testIG2",
+    "github": "testGH2",
+    "youtube": "testYT2",
+    "tiktok": "testtiktok2",
+    "twitch": "testtwitch2"
+  }
 ]

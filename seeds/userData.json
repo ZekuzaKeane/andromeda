@@ -1,17 +1,17 @@
 [
-    {
-        "username": "seededUser1",
-        "email": "seededEmail1@hotmail.com",
-        "password": "seededpassword123"
-    },
-    {
-        "username": "seededUser2",
-        "email": "seededEmail2@hotmail.com",
-        "password": "seededpassword123"
-    },
-    {
-        "username": "seededUser3",
-        "email": "seededEmail3@hotmail.com",
-        "password": "seededpassword123"
-    }
+  {
+    "username": "seededUser1",
+    "email": "seededEmail1@hotmail.com",
+    "password": "seededpassword123"
+  },
+  {
+    "username": "seededUser2",
+    "email": "seededEmail2@hotmail.com",
+    "password": "seededpassword123"
+  },
+  {
+    "username": "seededUser3",
+    "email": "seededEmail3@hotmail.com",
+    "password": "seededpassword123"
+  }
 ]

@@ -1,14 +1,14 @@
 [
-    {
-        "user_id":1,
-        "status": "This is a seeded status, to see if it works. If you can see this, its pretty much working!"
-    },
-    {
-        "user_id":2,
-        "status": "Something funny and a lil depressing"
-    },
-    {
-        "user_id":3,
-        "status": "Coding is hard, please help"
-    }
+  {
+    "user_id": 1,
+    "status": "This is a seeded status, to see if it works. If you can see this, its pretty much working!"
+  },
+  {
+    "user_id": 2,
+    "status": "Something funny and a lil depressing"
+  },
+  {
+    "user_id": 3,
+    "status": "Coding is hard, please help"
+  }
 ]
