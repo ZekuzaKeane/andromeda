@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const bcrypt =require('bcrypt');
+const bcrypt = require('bcrypt');
 
 router.post("/", async (req, res) => {
     try {
@@ -87,7 +87,11 @@ router.post("/login", async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-            res.json({ user: userData, message: `You've successfully logged in!` });
+            res.json({
+                user: userData, 
+                message: `You've successfully logged in!`,
+                redirect: `/profile/${userData.id}`
+            });
         });
     } catch (err) {
         console.log("Login error:", err);
