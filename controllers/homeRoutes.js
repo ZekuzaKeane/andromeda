@@ -50,7 +50,14 @@ router.get('/profile', async (req, res) => {
     try {
         userData = await User.findbyPK(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Constellation }],
+            include: [
+                {
+                    model: Social,
+                },
+                {
+                    model: Status,
+                },   
+            ],
         });
 
         const user = UserData.get({ plain: true });
@@ -62,18 +69,18 @@ router.get('/profile', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/profile');
-        return;
-    }
+    // if (req.session.logged_in) {
+    //     res.redirect('/profile');
+    //     return;
+    // }
     res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/profile');
-        return;
-    }
+    // if (req.session.logged_in) {
+    //     res.redirect('/profile');
+    //     return;
+    // }
     res.render('signup');
 });
 
