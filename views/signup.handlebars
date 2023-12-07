@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -77,14 +76,18 @@
       10px rgba(247, 243, 227, 0.8);" class="text-center mb-4">Create an account and join the community.</p>
 
         <form action="/signup" method="post">
-          <div class="signup-form" style="text-shadow: 0 0
+          <div style="text-shadow: 0 0
       10px rgba(247, 243, 227, 0.8);" class="form-group">
             <label for="username-signup">Username:</label>
             <input type="text" id="username-signup" name="username" class="form-control" required />
           </div>
 
-          <div style="text-shadow: 0 0
-      10px rgba(247, 243, 227, 0.8);" class="form-group">
+          <div style="text-shadow: 0 0 10px rgba(247, 243, 227, 0.8);" class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email-signup" name="email" class="form-control" required />
+          </div>
+
+          <div style="text-shadow: 0 0 10px rgba(247, 243, 227, 0.8);" class="form-group">
             <label for="password-signup">Password:</label>
             <input type="password" id="password-signup" name="password" class="form-control" required />
           </div>
@@ -92,7 +95,7 @@
           <div style="text-shadow: 0 0
       10px rgba(247, 243, 227, 0.8);" class="form-group">
             <label for="email">Email:</label>
-            <input type="email" id="email-signup" name="email"  class="form-control" required />
+            <input type="email" id="email-signup" name="email" class="form-control" required />
           </div>
 
           <button style="background-color: #43AA8B;" type="submit" class="btn btn-success btn-block">Sign Up</button>
@@ -106,4 +109,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
-</html>
+<script src="./js/signup.js"></script>
