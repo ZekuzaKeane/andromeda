@@ -4,17 +4,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap" rel="stylesheet" />
   <title>Login</title>
 
-  <style>
+<style>
     body {
-      background-color: #f5f5f5;
-      font-family: 'Space Mono', monospace;
-      color: #FAF3DD;
-      text-shadow: 0 0 10px rgba(247, 243, 227, 0.8);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background-image:
         url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
       background-size: cover;
@@ -22,13 +13,34 @@
       background-repeat:
         no-repeat;
       height: 100vh;
+      margin: 0;
+      font-family: 'Space Mono', monospace;
+      color: #FAF3DD;
+      font-size: 15px;
     }
 
-    form {
+    .container {
+      height: 100vh;
+      display:
+        flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
       background-color: #070600;
-      padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(247, 243, 227, 0.3);
+    }
+
+    .welcome-message {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #FAF3DD;
+      text-shadow: 0 0 10px rgba(247, 243, 227, 0.5);
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
     }
 
     label {
@@ -44,7 +56,6 @@
     }
 
     button {
-      background-color: #43AA8B;
       color: #fff;
       padding: 10px 15px;
       border: none;
