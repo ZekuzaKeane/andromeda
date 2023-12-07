@@ -74,7 +74,7 @@
         <button
           style="background-color: #43AA8B;"
           type="submit"
-          class="btn btn-success btn-block"
+          class="login-form btn btn-success btn-block"
         >Login</button>
         <p class="text-center mt-3">Don't have an account?
           <a href="/signup">Sign up!</a></p>
@@ -82,17 +82,6 @@
     </form>
   </div>
 
-  <script>
-    const showPasswordIcon = document.querySelector('#showPassword'); const
-    hidePasswordIcon = document.querySelector('#hidePassword'); const password =
-    document.querySelector('#password-login');
-    showPasswordIcon.addEventListener('click', function () {
-    password.setAttribute('type', 'text'); showPasswordIcon.style.display =
-    'none'; hidePasswordIcon.style.display = 'block'; });
-    hidePasswordIcon.addEventListener('click', function () {
-    password.setAttribute('type', 'password'); showPasswordIcon.style.display =
-    'block'; hidePasswordIcon.style.display = 'none'; });
-  </script>
-
-  <!-- Other scripts and closing tags -->
 </body>
+
+<script src="./js/login.js"></script>
