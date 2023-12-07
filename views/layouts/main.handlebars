@@ -142,11 +142,20 @@
             <a style="color: #FAF3DD;" class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
             <a style="color: #FAF3DD;" class="nav-link" href="/signup">Sign Up</a>
           </li>
+          {{#if logged_in}}
+          <li class="nav-item">
+            <a style="color: #FAF3DD;" class="nav-link" href="/profile" {{user.id}}>Profile</a>
+          </li>
+          <li class="nav-item">
+            <a style="color: #FAF3DD;" class="nav-link" id="logout" href="/logout">Logout</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a style="color: #FAF3DD;" class="nav-link" href="/login">Login</a>
+          </li>
+          {{/if}}
         </ul>
         <!-- Left links -->
       </div>
