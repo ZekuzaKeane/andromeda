@@ -149,11 +149,11 @@
             <a style="color: #FAF3DD;" class="nav-link" href="/profile/"{{user.id}}>Profile</a>
           </li>
           <li class="nav-item logout">
-            <button style="color: #FAF3DD;" class="nav-link logout" id="logout">Logout</button>
+            <a style="color: #FAF3DD; background-color: rgba(0, 0, 0); cursor: pointer;" class="nav-link logout" id="logout">Logout</a>
           </li>
           {{else}}
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/login">Login</a>
+            <a style="color:#FAF3DD; background-color: rgba(0, 0, 0, 0.8);" class="nav-link" href="/login">Login</a>
           </li>
           {{/if}}
         </ul>
@@ -190,7 +190,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   {{!
   <script src="/scripts/main.js"></script> }}
-  {{#if logged_in}}<script src="./js/logout.js"></script>{{/if}}
+  {{#if logged_in}}<script src="/js/logout.js"></script>{{/if}}
 </body>
 
 </html>

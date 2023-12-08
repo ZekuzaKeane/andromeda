@@ -1,6 +1,10 @@
-{{!-- <!-- profile.handlebars -->
 
-{{! Check if the data is still loading }}
+
+
+
+
+
+
 {{#if loading}}
   <div class="spinner-border" role="status">
     <span class="sr-only">Loading...</span>
@@ -10,46 +14,51 @@
     <div class="profile-container">
       <h2>Hello, {{username}}!</h2>
 
-      <section>
-        <h3>Your Profile</h3>
-        <p>Email: {{email}}</p>
-        <p>Twitter: {{social.twitter}}</p>
-        <!-- Add more user details as needed -->
+      <section class="profile-info">
+        
+        <h3>{{username}}</h3>
+        
+        
+        <div class="media">
+          <img src="{{profilePicture}}" class="mr-3" alt="Profile Picture">
+          <div class="media-body">
+            <h5 class="mt-0">Profile Picture</h5>
+            <p>Upload or change your profile picture</p>
+            
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h3>Your Constellations</h3>
+      <section class="status-section">
+        
+        <form id="statusForm" action="/api/status" method="POST">
+          <div class="form-group">
+            <label for="status">Post your status:</label>
+            <textarea class="form-control" id="status" name="status" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Post Status</button>
+        </form>
+
+        
+        <h3>Your Statuses:</h3>
         <ul>
-          {{#each session.user.constellations}}
+          {{#each statuses}}
             <li>
-              <strong>{{name}}</strong>
-              <!-- Display more constellation details as needed -->
+              <p>{{status}}</p>
+              
             </li>
           {{/each}}
         </ul>
       </section>
-
-      <section>
-        <h3>Your Status:</h3>
-        <ul>
-          {{#each session.user.comments}}
-            <li>{{content}}</li>
-            <!-- Display more comment details as needed -->
-          {{/each}}
-        </ul>
-      </section>
-
-      <!-- Add more sections for other user-related content -->
-      <a href="/create-constellation">Create Constellation</a>
     </div>
   {{else}}
     <h2>Welcome to Constellation</h2>
-    <p>Explore the constellations created by our community. Sign up to create
-      your own!</p>
+    <p>Explore the constellations created by our community. Sign up to create your own!</p>
     <a href="/signup">Sign Up</a>
     <a href="/login">Login</a>
   {{/if}}
-{{/if}} --}}
+{{/if}}
+
 
 
 
@@ -58,7 +67,7 @@
 <br />
 <br />
 <br />
-{{!-- To DO: set these up to open in a new tab vs current window changing --}}
+
 {{#if constellation.social.twitter}}
   <a href="https://twitter.com/{{constellation.social.twitter}}">Twitter</a>
 {{/if}}
