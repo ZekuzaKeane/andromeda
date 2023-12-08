@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Social, Status } = require("../../models");
 const bcrypt = require('bcrypt');
 
 router.post("/", async (req, res) => {
@@ -44,12 +44,48 @@ router.post("/signup", async (req, res) => {
             req.session.logged_in = true;
             res
                 .status(302)
-                .location('/login')
+                .location('/signup')
                 .json({ user: newUser, message: "User created successfully!" });
         });
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: "Internal server error. Uhoh!" });
+    }
+});
+
+router.post("/socials", async (req, res) => {
+    try {
+        console.log(req.body)
+        console.log(req.session.user_id)
+        const userData = await Social.update(req.body, {
+            where: { id: req.session.user_id },
+        });
+
+        if (!userData) {
+            res
+                .status(400)
+                .json({
+                    message:
+                        "The username was not found",
+                });
+            return;
+        }
+        const constellationData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ["password"] },
+            include: [
+              {
+                model: Social,
+              },
+              {
+                model: Status,
+              },
+            ],
+          });
+        const constellation = constellationData.get({ plain: true });
+        res.render("profile", { constellation, logged_in: req.session.logged_in });
+    } catch (err) {
+        console.log("Error:", err);
+        res.status(500).json({ message: "Internal server error. Uh oh!" });
     }
 });
 
@@ -88,7 +124,7 @@ router.post("/login", async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             res.json({
-                user: userData, 
+                user: userData,
                 message: `You've successfully logged in!`,
                 redirect: `/profile/${userData.id}`
             });

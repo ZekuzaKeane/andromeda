@@ -73,6 +73,14 @@ router.get("/profile/:id", async (req, res) => {
   }
 });
 
+router.get("/socials", (req, res) => {
+  // if (req.session.logged_in) {
+  //     res.redirect('/profile');
+  //     return;
+  // }
+  res.render("socials");
+});
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
       res.redirect('/profile');
@@ -83,7 +91,7 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
-      res.redirect('/profile');
+      res.redirect('/socials');
       return;
   }
   res.render("signup");

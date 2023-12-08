@@ -1,0 +1,89 @@
+<body>
+  <div class="container">
+    <form class="socials-form card col-md-6" action="/api/users/socials" method="post">
+      <div class="card-body">
+        <h2 class="text-center mb-4 social-message">Connect your socials</h2>
+
+        <div class="form-group">
+          <label for="twitter-login">Twitter:</label>
+          <input
+            placeholder="twitter"
+            type="text"
+            id="twitter-login"
+            name="twitter"
+            class="form-control"
+           
+          />
+        </div>
+
+        <div class="form-group input-container">
+          <label for="instagram-login">Instagram:</label>
+          <input
+            type="text"
+            id="instagram-login"
+            placeholder="instagram"
+            name="instagram"
+            class="form-control"
+            
+          />
+        </div>
+
+             <div class="form-group input-container">
+          <label for="tikTok-login">TikTok:</label>
+          <input
+            type="text"
+            id="tikTok-login"
+            placeholder="tikTok"
+            name="tikTok"
+            class="form-control"
+           
+          />
+        </div>
+
+             <div class="form-group input-container">
+          <label for="youtube-login">YouTube:</label>
+          <input
+            type="text"
+            id="youtube-login"
+            placeholder="youtube"
+            name="youtube"
+            class="form-control"
+            
+          />
+        </div>
+
+            <div class="form-group input-container">
+          <label for="github-login">GitHub:</label>
+          <input
+            type="text"
+            id="github-login"
+            placeholder="github"
+            name="github"
+            class="form-control"
+            
+          />
+        </div>
+
+        <div class="form-group input-container">
+          <label for="twitch-login">Twitch:</label>
+          <input
+            type="text"
+            id="twitch-login"
+            placeholder="twitch"
+            name="twitch"
+            class="form-control"
+    
+          />
+        </div>
+
+        <button
+          style="background-color: #43AA8B;"
+          type="submit"
+          class="socials-form btn btn-success btn-block"
+        >Submit</button>
+        <p class="text-center mt-3"><i>Leave socials you don't want to share empty</i></p>
+      </div>
+    </form>
+  </div>
+
+  <script src="./js/socials.js"></script>

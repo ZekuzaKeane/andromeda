@@ -18,57 +18,36 @@ Social.init(
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-      validate: {
-        len: [1, 15],
-      },
     },
     instagram: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-      validate: {
-        len: [1, 30],
-      },
     },
     tiktok: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-      validate: {
-        len: [1, 24],
-      },
     },
     youtube: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-      validate: {
-        len: [1, 30],
-      },
     },
     github: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-      validate: {
-        len: [1, 39],
-      },
     },
     twitch: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-      validate: {
-        len: [1, 25],
-      },
     },
     steam: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-      validate: {
-        len: [2, 32],
-      },
     },
     user_id: {
       type: DataTypes.INTEGER,
