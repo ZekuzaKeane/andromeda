@@ -55,8 +55,8 @@ router.post("/signup", async (req, res) => {
 
 router.post("/socials", async (req, res) => {
     try {
-        console.log(req.body)
-        console.log(req.session.user_id)
+        console.log("request body:", req.body)
+        console.log("request session user_id: ", req.session.user_id)
         const userData = await Social.update(req.body, {
             where: { id: req.session.user_id },
         });
