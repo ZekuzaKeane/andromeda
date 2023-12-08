@@ -57,10 +57,31 @@ router.post("/socials", async (req, res) => {
     try {
         console.log("request body:", req.body)
         console.log("request session user_id: ", req.session.user_id)
-        const userData = await Social.update(req.body, {
-            where: { id: req.session.user_id },
-        });
-     
+        //const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
+        //const userData = await Social.create(req.body, {
+        //   where: { id: req.session.user_id },
+        //});
+        const alreadySocial = await Social.findOne({
+            where: { id: req.session.user_id }
+        })
+        if (alreadySocial) {
+            const userData = await Social.update(req.body, {
+                where: { id: req.session.user_id },
+            });
+            if (!userData) {
+                console.log('BAD USER DATA');
+                res
+                    .status(400)
+                    .json({
+                        message:
+                            "The username was not found",
+                    });
+                return;
+            }
+        } else {
+            const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
+        }
+
         if (!userData) {
             console.log('BAD USER DATA');
             res
@@ -83,7 +104,7 @@ router.post("/socials", async (req, res) => {
                 },
             ],
         });
-        //   console.log('constellationData: ', constellationData);
+
         const constellation = constellationData.get({ plain: true });
         console.log('constellation: ', constellation);
         res.render("profile", { constellation, logged_in: req.session.logged_in });
