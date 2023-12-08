@@ -44,11 +44,11 @@ Social.init(
       allowNull: true,
       unique: true,
     },
-    steam: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: true,
-    },
+    // steam: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   unique: true,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
