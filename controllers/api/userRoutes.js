@@ -77,21 +77,24 @@ router.post("/socials", async (req, res) => {
                             "The username was not found",
                     });
                 return;
+            } else {
+                res.redirect(/profile/${req.session.user_id})
             }
         } else {
             const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
+            res.redirect(/profile/${req.session.user_id})
         }
 
-        if (!userData) {
-            console.log('BAD USER DATA');
-            res
-                .status(400)
-                .json({
-                    message:
-                        "The username was not found",
-                });
-            return;
-        }
+       // if (!userData) {
+           // console.log('BAD USER DATA');
+          //  res
+             //   .status(400)
+            //    .json({
+              //      message:
+              //          "The username was not found",
+              //  });
+         //   return;
+       // }
         console.log('BEFORE constellationData: line 75');
         const constellationData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
@@ -104,7 +107,7 @@ router.post("/socials", async (req, res) => {
                 },
             ],
         });
-
+        //   console.log('constellationData: ', constellationData);
         const constellation = constellationData.get({ plain: true });
         console.log('constellation: ', constellation);
         res.render("profile", { constellation, logged_in: req.session.logged_in });
