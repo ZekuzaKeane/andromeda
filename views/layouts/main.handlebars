@@ -146,10 +146,10 @@
           </li>
           {{#if logged_in}}
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/profile/"{{constellations.id}}>Profile</a>
+            <a style="color: #FAF3DD;" class="nav-link" href="/profile/"{{user.id}}>Profile</a>
           </li>
-          <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" id="loguo" href="/logout">Logout</a>
+          <li class="nav-item logout">
+            <button style="color: #FAF3DD;" class="nav-link logout" id="logout">Logout</button>
           </li>
           {{else}}
           <li class="nav-item">
@@ -190,6 +190,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   {{!
   <script src="/scripts/main.js"></script> }}
+  {{#if logged_in}}<script src="./js/logout.js"></script>{{/if}}
 </body>
 
 </html>
