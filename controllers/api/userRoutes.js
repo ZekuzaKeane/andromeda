@@ -60,8 +60,9 @@ router.post("/socials", async (req, res) => {
         const userData = await Social.update(req.body, {
             where: { id: req.session.user_id },
         });
-
+     
         if (!userData) {
+            console.log('BAD USER DATA');
             res
                 .status(400)
                 .json({
@@ -70,18 +71,21 @@ router.post("/socials", async (req, res) => {
                 });
             return;
         }
+        console.log('BEFORE constellationData: line 75');
         const constellationData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
             include: [
-              {
-                model: Social,
-              },
-              {
-                model: Status,
-              },
+                {
+                    model: Social,
+                },
+                {
+                    model: Status,
+                },
             ],
-          });
+        });
+        //   console.log('constellationData: ', constellationData);
         const constellation = constellationData.get({ plain: true });
+        console.log('constellation: ', constellation);
         res.render("profile", { constellation, logged_in: req.session.logged_in });
     } catch (err) {
         console.log("Error:", err);
