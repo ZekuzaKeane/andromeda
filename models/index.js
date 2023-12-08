@@ -1,7 +1,7 @@
-const User = require("./User");
+const User = require("./user");
 const Status = require("./Status");
 // const Constellation = require('./Constellation');
-const Social = require("./Social");
+const Social = require("./social");
 
 // Associations:
 
