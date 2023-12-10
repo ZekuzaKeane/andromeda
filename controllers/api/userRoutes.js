@@ -55,6 +55,7 @@ router.post("/signup", async (req, res) => {
 
 router.post("/socials", async (req, res) => {
     try {
+        const userID = req.session.user_id
         console.log("request body:", req.body)
         console.log("request session user_id: ", req.session.user_id)
         //const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
@@ -78,13 +79,12 @@ router.post("/socials", async (req, res) => {
                     });
                 return;
             } else {
-                res.redirect(/profile/${req.session.user_id})
+                res.redirect(`/profile/${req.session.user_id}`)
             }
         } else {
             const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
-            res.redirect(/profile/${req.session.user_id})
+            res.redirect(`/profile/${req.session.user_id}`)
         }
-
        // if (!userData) {
            // console.log('BAD USER DATA');
           //  res
@@ -95,7 +95,6 @@ router.post("/socials", async (req, res) => {
               //  });
          //   return;
        // }
-        console.log('BEFORE constellationData: line 75');
         const constellationData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
             include: [

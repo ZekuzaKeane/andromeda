@@ -34,7 +34,7 @@ const socialFormHandler = async (event) => {
           document.location.replace("/socials");
         }
       } else {
-        console.log('caught at ELSE block');
+        console.log('ELSE block');
         alert(response.statusText);
       }
     }
