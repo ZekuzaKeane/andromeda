@@ -17,7 +17,7 @@
         url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; 
+      background-attachment: fixed;
       background-repeat:
         no-repeat;
       height: 100vh;
@@ -142,30 +142,31 @@
           <li class="nav-item">
             <a style="color: #FAF3DD;" class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/signup">Sign Up</a>
-          </li>
           {{#if logged_in}}
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/profile/"{{user.id}}>Profile</a>
+            <a style="color: #FAF3DD;" class="nav-link" href="/profile/" {{user.id}}>Profile</a>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
             <a style="color: #FAF3DD;" class="nav-link" href="/socials/">Socials</a>
           </li>
           <li class="nav-item logout">
-            <a style="color: #FAF3DD; background-color: rgba(0, 0, 0); cursor: pointer;" class="nav-link logout" id="logout">Logout</a>
+            <a style="color: #FAF3DD; background-color: rgba(0, 0, 0); cursor: pointer;" class="nav-link logout"
+              id="logout">Logout</a>
           </li>
           {{else}}
+          <li class="nav-item">
+            <a style="color: #FAF3DD;" class="nav-link" href="/signup">Sign Up</a>
+          </li>
           <li class="nav-item">
             <a style="color:#FAF3DD; background-color: rgba(0, 0, 0, 0.8);" class="nav-link" href="/login">Login</a>
           </li>
           {{/if}}
         </ul>
-      
+
       </div>
-      
+
     </div>
- 
+
   </nav>
   <!-- Navbar -->
 
@@ -190,7 +191,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   {{!
   <script src="/scripts/main.js"></script> }}
-  {{#if logged_in}}<script src="/js/logout.js"></script>{{/if}}
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>{{/if}}
 </body>
 
 </html>
