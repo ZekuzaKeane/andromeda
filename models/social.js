@@ -1,6 +1,3 @@
-// model to hold all of the Users' socials / content of the constellations
-// twitter validation to ensure provided username is between 1-15 chars, as is required by twitter themself.
-// ^^^ same logic behind len validations for other socials
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
