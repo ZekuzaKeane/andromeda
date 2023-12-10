@@ -85,7 +85,7 @@ router.post("/socials", async (req, res) => {
         } else {
             const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
             res.redirect(`/profile/${req.session.user_id}`)
-        }
+        } 
         const constellationData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
             include: [
@@ -156,7 +156,6 @@ router.post("/login", async (req, res) => {
 
 // user LOGOUT
 router.post("/logout", (req, res) => {
-    console.log('HELLO 123');
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
