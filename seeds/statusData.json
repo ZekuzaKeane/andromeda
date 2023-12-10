@@ -1,14 +1,14 @@
 [
   {
     "user_id": 1,
-    "status": "This is a seeded status, to see if it works. If you can see this, its pretty much working!"
+    "status": "This is a seeded status, to ensure it's working. If you can see this, it's working!"
   },
   {
     "user_id": 2,
-    "status": "Something funny and a lil depressing"
+    "status": "Something funny, maybe a lil' depressing. You know how life be sometimes. "
   },
   {
     "user_id": 3,
-    "status": "Coding is hard, please help"
+    "status": "Coding is hard, please help. And please, don't tell met to ask ChatGPT!"
   }
 ]
