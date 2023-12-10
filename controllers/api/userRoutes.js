@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// New user signup
+//New user SIGNUP
 router.post("/signup", async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -53,6 +53,7 @@ router.post("/signup", async (req, res) => {
     }
 });
 
+///// SOCIALS
 router.post("/socials", async (req, res) => {
     try {
         const userID = req.session.user_id
@@ -85,16 +86,6 @@ router.post("/socials", async (req, res) => {
             const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
             res.redirect(`/profile/${req.session.user_id}`)
         }
-       // if (!userData) {
-           // console.log('BAD USER DATA');
-          //  res
-             //   .status(400)
-            //    .json({
-              //      message:
-              //          "The username was not found",
-              //  });
-         //   return;
-       // }
         const constellationData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
             include: [
@@ -116,6 +107,7 @@ router.post("/socials", async (req, res) => {
     }
 });
 
+// user LOGIN
 router.post("/login", async (req, res) => {
     try {
         const userData = await User.findOne({
@@ -162,6 +154,7 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// user LOGOUT
 router.post("/logout", (req, res) => {
     console.log('HELLO 123');
     if (req.session.logged_in) {
