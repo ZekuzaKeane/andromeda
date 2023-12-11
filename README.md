@@ -39,7 +39,7 @@ Deployed application: https://constellation-application-b32a4fee0e20.herokuapp.c
 
 Nic Diaz: https://github.com/nicanthoni
 Chris Panelli: https://github.com/Cpanelli
-Jaylon Allen: GitHub profile link
+Jaylon Allen: https://github.com/jlonthegrea
 Zach G: https://github.com/ZekuzaKeane
 
 

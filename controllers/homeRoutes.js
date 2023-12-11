@@ -73,12 +73,12 @@ router.get("/profile/:id", async (req, res) => {
   }
 });
 
-router.get("/socials", (req, res) => {
+router.get("/socials", withAuth, (req, res) => {
   // if (req.session.logged_in) {
   //     res.redirect('/profile');
   //     return;
   // }
-  res.render("socials");
+  res.render("socials", {logged_in: req.session.logged_in});
 });
 
 router.get("/login", (req, res) => {
