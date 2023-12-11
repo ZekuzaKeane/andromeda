@@ -27,8 +27,7 @@ Viva la astra.
 
 ## Deployed application link
 
-Deplyed application: https://constellation-application-b32a4fee0e20.herokuapp.com/
-
+Deployed application: https://constellation-application-b32a4fee0e20.herokuapp.com/
 
 
 ## How to use?
