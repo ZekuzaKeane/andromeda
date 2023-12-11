@@ -59,10 +59,6 @@ router.post("/socials", async (req, res) => {
         const userID = req.session.user_id
         console.log("request body:", req.body)
         console.log("request session user_id: ", req.session.user_id)
-        //const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
-        //const userData = await Social.create(req.body, {
-        //   where: { id: req.session.user_id },
-        //});
         const alreadySocial = await Social.findOne({
             where: { id: req.session.user_id }
         })
@@ -82,31 +78,12 @@ router.post("/socials", async (req, res) => {
                     });
                 return;
             } 
-               res.redirect(`/profile/${req.session.user_id}`)
-              
-              // res.json(userData)
-            
+               res.redirect(`/profile/${req.session.user_id}`)         
         } else {
             const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
             console.log('New user');
-           // res.redirect(`/profile/${req.session.user_id}`)
            res.json(userData)
         } 
-        // const constellationData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ["password"] },
-        //     include: [
-        //         {
-        //             model: Social,
-        //         },
-        //         {
-        //             model: Status,
-        //         },
-        //     ],
-        // });
-        // //   console.log('constellationData: ', constellationData);
-        // const constellation = constellationData.get({ plain: true });
-        // console.log('constellation: ', constellation);
-        // res.render("profile", { constellation, logged_in: req.session.logged_in });
     } catch (err) {
         console.log("Error:", err);
         res.status(500).json({ message: "Internal server error. Uh oh!" });
