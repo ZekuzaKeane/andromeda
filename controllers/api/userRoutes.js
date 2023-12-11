@@ -66,7 +66,9 @@ router.post("/socials", async (req, res) => {
         const alreadySocial = await Social.findOne({
             where: { id: req.session.user_id }
         })
+        console.log(alreadySocial);
         if (alreadySocial) {
+            console.log('existing social');
             const userData = await Social.update(req.body, {
                 where: { id: req.session.user_id },
             });
@@ -79,28 +81,32 @@ router.post("/socials", async (req, res) => {
                             "The username was not found",
                     });
                 return;
-            } else {
-                res.redirect(`/profile/${req.session.user_id}`)
-            }
+            } 
+               res.redirect(`/profile/${req.session.user_id}`)
+              
+              // res.json(userData)
+            
         } else {
             const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
-            res.redirect(`/profile/${req.session.user_id}`)
+            console.log('New user');
+           // res.redirect(`/profile/${req.session.user_id}`)
+           res.json(userData)
         } 
-        const constellationData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ["password"] },
-            include: [
-                {
-                    model: Social,
-                },
-                {
-                    model: Status,
-                },
-            ],
-        });
-        //   console.log('constellationData: ', constellationData);
-        const constellation = constellationData.get({ plain: true });
-        console.log('constellation: ', constellation);
-        res.render("profile", { constellation, logged_in: req.session.logged_in });
+        // const constellationData = await User.findByPk(req.session.user_id, {
+        //     attributes: { exclude: ["password"] },
+        //     include: [
+        //         {
+        //             model: Social,
+        //         },
+        //         {
+        //             model: Status,
+        //         },
+        //     ],
+        // });
+        // //   console.log('constellationData: ', constellationData);
+        // const constellation = constellationData.get({ plain: true });
+        // console.log('constellation: ', constellation);
+        // res.render("profile", { constellation, logged_in: req.session.logged_in });
     } catch (err) {
         console.log("Error:", err);
         res.status(500).json({ message: "Internal server error. Uh oh!" });

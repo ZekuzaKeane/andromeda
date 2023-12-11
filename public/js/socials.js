@@ -31,7 +31,7 @@ const socialFormHandler = async (event) => {
       } else {
         // If redirect field isn't present, navigate to a default location below
         console.log('REPLACING location with socials!');
-        document.location.replace("/socials");
+        document.location.replace("/profile");
       }
     } else {
       alert(response.statusText);
