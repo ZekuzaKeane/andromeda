@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Constellation</title>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/feb9ae65df.js" crossorigin="anonymous"></script> 
-{{!-- for font awesome icons ^^^ --}}
- 
+  <script src="https://kit.fontawesome.com/feb9ae65df.js" crossorigin="anonymous"></script>
+  {{!-- for font awesome icons ^^^ --}}
+
   <style>
     body {
       background-image:
@@ -42,158 +42,73 @@
     .material-icons {
       font-size: 25px;
     }
-
-    .glow-on-hover {
-      width: 220px;
-      height: 50px;
-      border:
-        none;
-      outline: none;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.8);
-      /*
-      Adjust the alpha value as needed */
-      cursor: pointer;
-      position: relative;
-      z-index: 0;
-      border-radius: 10px;
-    }
-
-    .glow-on-hover:before {
-      content: '';
-      background: linear-gradient(45deg, #f5f2f2, #0f0e0e, #f9f9f6, #060606,
-          #f1f4f4, #090909, #fbfafb, #020202, #f7f5f5);
-      position: absolute;
-      top:
-        -2px;
-      left: -2px;
-      background-size: 400%;
-      z-index: -1;
-      filter: blur(5px);
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      animation: glowing 20s linear infinite;
-      opacity: 0;
-      transition: opacity .3s ease-in-out;
-      border-radius: 10px;
-    }
-
-    .glow-on-hover:active {
-      color: #000;
-    }
-
-    .glow-on-hover:active:after {
-      background: transparent;
-    }
-
-    .glow-on-hover:hover:before {
-      opacity: 1;
-    }
-
-    .glow-on-hover:after {
-      z-index: -1;
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      /* Adjust the alpha value as needed */
-      left: 0;
-      top: 0;
-      border-radius: 10px;
-    }
-
-    @keyframes glowing {
-      0% {
-        background-position: 0 0;
-      }
-
-      50% {
-        background-position: 400% 0;
-      }
-
-      100% {
-        background-position: 0 0;
-      }
-    }
   </style>
 
 </head>
 
 <body>
 
+
   <!-- Navbar -->
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <!-- Container wrapper -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary">
     <div class="container-fluid">
-      <!-- Navbar brand without glowing effect -->
-      <a style="color: #FAF3DD;" class="navbar-brand" href="/">Constellation</a>
-
-      <!-- Toggle button with glowing effect -->
-      {{!-- <button class="navbar-toggler glow-on-hover" type="button" data-toggle="collapse" data-target="#navbarNav"
+      <a style="color: #FFFFFF;" class="navbar-brand" href="/">Constellation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i style="color: #FAF3DD;" class="material-icons">Menu</i>
-      </button> --}}
-
-      <!-- Collapsible wrapper -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <!-- Left links -->
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/">Home</a>
+            <a style="color: #FAF3DD;" class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           {{#if logged_in}}
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/profile/" {{user.id}}>Profile</a>
+            <a style="color: #FAF3DD;" class="nav-link active" href="/profile/{{user.id}}">Profile</a>
           </li>
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/socials/">Socials</a>
+            <a style="color: #FAF3DD;" class="nav-link active" href="/socials/">Socials</a>
           </li>
           <li class="nav-item logout">
-            <a style="color: #FAF3DD; background-color: rgba(0, 0, 0); cursor: pointer;" class="nav-link logout"
+            <a style="color: #FAF3DD; background-color: rgba(0, 0, 0); cursor: pointer;" class="nav-link active logout"
               id="logout">Logout</a>
           </li>
           {{else}}
           <li class="nav-item">
-            <a style="color: #FAF3DD;" class="nav-link" href="/signup">Sign Up</a>
+            <a style="color: #FAF3DD;" class="nav-link active" href="/signup">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a style="color:#FAF3DD; background-color: rgba(0, 0, 0, 0.8);" class="nav-link" href="/login">Login</a>
+            <a style="color:#FAF3DD; background-color: rgba(0, 0, 0, 0.8);" class="nav-link active"
+              href="/login">Login</a>
           </li>
           {{/if}}
         </ul>
-
       </div>
-
     </div>
-
   </nav>
+
   <!-- Navbar -->
 
   <main class="container mt-4">
-    <!-- Check if user is logged in -->
-    {{!-- {{#if session.logged_in}}
-    <p>Hello, {{session.user.userName}}!</p>
-    {{else}}
-    <!-- Include content for non-logged-in users -->
-    {{/if}} --}}
+
 
     {{{body}}}
   </main>
 
+
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
   <footer class="fixed-bottom mt-4 text-center">
-    <!-- Include footer content -->
     <p>&copy; 2023 Constellation. All rights reserved.</p>
   </footer>
-
-  <script src="https://code.jquery.com/jquery-3.3.im.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  {{!
-  <script src="/scripts/main.js"></script> }}
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>{{/if}}
-</body>
 
 </html>
