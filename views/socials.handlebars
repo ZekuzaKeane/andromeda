@@ -1,20 +1,75 @@
-  <style>
-    body { background-image:
-    url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover; background-position: center; background-repeat:
-    no-repeat; height: 100vh; margin: 0;
-    color: #FAF3DD; font-size: 15px; } .container { height: 100vh; display:
-    flex; align-items: center; justify-content: center; } .card {
-    background-color: #070600; border-radius: 8px; box-shadow: 0 0 10px
-    rgba(247, 243, 227, 0.3); } .welcome-message { text-align: center;
-    font-size: 30px; margin-bottom: 20px; color: #FAF3DD; text-shadow: 0 0 10px
-    rgba(247, 243, 227, 0.5); font-weight:
-    700; } label { display: block; margin-bottom: 8px; } .input-container {
-    position: relative; } input { width: 100%; padding: 8px; margin-bottom:
-    16px; box-sizing: border-box; } .eye-icon { width: 20px; position: absolute;
-    right: 10px; top: 70%; transform: translateY(-50%); cursor: pointer; color:
-    #070600; } .btn { color: #fff; border-radius: 4px; cursor: pointer; }
-  </style>
+<style>
+  body {
+    background-image:
+      url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat:
+      no-repeat;
+    height: 100vh;
+    margin: 0;
+    color: #FAF3DD;
+    font-size: 15px;
+  }
+
+  .container {
+    height: 100vh;
+    display:
+      flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: #070600;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(247, 243, 227, 0.3);
+  }
+
+  .welcome-message {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #FAF3DD;
+    text-shadow: 0 0 10px rgba(247, 243, 227, 0.5);
+    font-weight:
+      700;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .input-container {
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom:
+      16px;
+    box-sizing: border-box;
+  }
+
+  .eye-icon {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color:
+      #070600;
+  }
+
+  .btn {
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
 
 
 
@@ -26,105 +81,55 @@
 
         <div class="form-group">
           <label for="twitter-login">Twitter:</label>
-          <input
-            placeholder="Twitter Username"
-            type="text"
-            id="twitter-login"
-            name="twitter"
-            class="form-control"
-           
-          />
+          <input placeholder="Twitter Username" type="text" id="twitter-login" name="twitter" class="form-control" />
         </div>
 
         <div class="form-group input-container">
           <label for="instagram-login">Instagram:</label>
-          <input
-            type="text"
-            id="instagram-login"
-            placeholder="Instagram Username"
-            name="instagram"
-            class="form-control"
-            
-          />
+          <input type="text" id="instagram-login" placeholder="Instagram Username" name="instagram"
+            class="form-control" />
         </div>
 
-             <div class="form-group input-container">
+        <div class="form-group input-container">
           <label for="tikTok-login">TikTok:</label>
-          <input
-            type="text"
-            id="tikTok-login"
-            placeholder="TikTok Username"
-            name="tikTok"
-            class="form-control"
-           
-          />
+          <input type="text" id="tikTok-login" placeholder="TikTok Username" name="tikTok" class="form-control" />
         </div>
 
-             <div class="form-group input-container">
+        <div class="form-group input-container">
           <label for="youtube-login">YouTube:</label>
-          <input
-            type="text"
-            id="youtube-login"
-            placeholder="YouTube Username"
-            name="youtube"
-            class="form-control"
-            
-          />
+          <input type="text" id="youtube-login" placeholder="YouTube Username" name="youtube" class="form-control" />
         </div>
 
-            <div class="form-group input-container">
+        <div class="form-group input-container">
           <label for="github-login">GitHub:</label>
-          <input
-            type="text"
-            id="github-login"
-            placeholder="GitHub Username"
-            name="github"
-            class="form-control"
-            
-          />
+          <input type="text" id="github-login" placeholder="GitHub Username" name="github" class="form-control" />
         </div>
 
         <div class="form-group input-container">
           <label for="twitch-login">Twitch:</label>
-          <input
-            type="text"
-            id="twitch-login"
-            placeholder="Twitch Username"
-            name="twitch"
-            class="form-control"
-    
-          />
+          <input type="text" id="twitch-login" placeholder="Twitch Username" name="twitch" class="form-control" />
         </div>
 
         <div class="form-group input-container">
-<<<<<<<<< Temporary merge branch 1
-          <label for="profile-picture">Upload Profile Picture:</label>
-          <form method = "POST" action ="/upload" enctype = "multipart/form-data">
-            <input type = "file" name = "image">
-            <input type = "submit">
-          </form>
-            
-        </div>
-
-
-=========
           <label for="social-status">Status:</label>
-          <input
-            type="text"
-            id="social-status"
-            placeholder="Share a status for others to see!"
-            name="status"
-            class="form-control"
-  
-          />
+          <input type="text" id="social-status" placeholder="Share a status for others to see!" name="status"
+            class="form-control" />
         </div>
 
->>>>>>>>> Temporary merge branch 2
-        <button
-          style="background-color: #43AA8B;"
-          type="submit"
-          class="socials-form btn btn-success btn-block"
-        >Submit</button>
+
+        {{!-- <div class="form-group input-container">
+          Temporary merge branch 1
+          <label for="profile-picture">Upload Profile Picture:</label>
+          <form method="POST" action="/upload" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit">
+          </form>
+
+        </div> --}}
+
+
+        <button style="background-color: #43AA8B;" type="submit"
+          class="socials-form btn btn-success btn-block">Submit</button>
         <p class="text-center mt-3"><i>Leave socials you don't want to share empty</i></p>
       </div>
     </form>
