@@ -8,17 +8,18 @@ const socialFormHandler = async (event) => {
   const youtube = document.querySelector("#youtube-login").value.trim();
   const github = document.querySelector("#github-login").value.trim();
   const twitch = document.querySelector("#twitch-login").value.trim();
+  const status = document.querySelector("#social-status").value.trim();
 
 
-  if (twitter || instagram || tiktok || youtube || github || twitch) {
+  if (twitter || instagram || tiktok || youtube || github || twitch || status ) {
     // Sends POST request to the API
     const response = await fetch("/api/users/socials", {
       method: "POST",
-      body: JSON.stringify({ twitter, instagram, tiktok, youtube, github, twitch }),
+      body: JSON.stringify({ twitter, instagram, tiktok, youtube, github, twitch, status }),
       headers: { "Content-Type": "application/json" },
     });
 
-    console.log("Request Data:", JSON.stringify({ twitter, instagram, tiktok, youtube, github, twitch }));
+    console.log("Request Data:", JSON.stringify({ twitter, instagram, tiktok, youtube, github, twitch, status }));
 
     if (response.ok) {
       console.log('response is OK!');

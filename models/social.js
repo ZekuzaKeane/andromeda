@@ -57,6 +57,13 @@ Social.init(
         key: "id",
       },
     },
+    // user_status: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "status",
+    //     key: "status",
+    //   },
+    // },
   },
   {
     sequelize,
