@@ -41,11 +41,11 @@ Social.init(
       allowNull: true,
       unique: true,
     }, 
-    picture: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: true,
-    },
+    // picture: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   unique: true,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
