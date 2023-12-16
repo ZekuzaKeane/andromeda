@@ -68,22 +68,68 @@ router.post("/socials", async (req, res) => {
             const userData = await Social.update(req.body, {
                 where: { id: req.session.user_id },
             });
+
             if (!userData) {
                 console.log('BAD USER DATA');
                 res
                     .status(400)
                     .json({
                         message:
-                            "The username was not found",
+                            "Failed to update socials",
                     });
                 return;
-            } 
-               res.redirect(`/profile/${req.session.user_id}`)         
+            }
+            /////////////// test
+
+            const alreadyStatus = await Status.findOne({
+                where: { user_id: req.session.user_id },
+            });
+
+            if (alreadyStatus) {
+                // Update existing status
+                const updatedStatus = await Status.update(
+                    { status: req.body.status },
+                    {
+                        where: { user_id: req.session.user_id },
+                    }
+                );
+
+                if (!updatedStatus) {
+                    console.log("BAD STATUS DATA");
+                    res.status(400).json({
+                        message: "Failed to update status",
+                    });
+                    return;
+                }
+            } else {
+                // Create a new status
+                const newStatus = await Status.create({
+                    status: req.body.status,
+                    user_id: req.session.user_id,
+                });
+
+                console.log("New status");
+                res.json(newStatus);
+                return;
+            }
+
+            ////////////// test ^
+            res.redirect(`/profile/${req.session.user_id}`)
         } else {
-            const userData = await Social.create({ ...req.body, user_id: req.session.user_id })
-            console.log('New user');
-           res.json(userData)
-        } 
+            const newSocialData = await Social.create({
+                ...req.body,
+                user_id: req.session.user_id,
+            });
+
+            // Create a new status
+            const newStatus = await Status.create({
+                status: req.body.status,
+                user_id: req.session.user_id,
+            });
+
+            console.log("New user and status");
+            res.json({ newSocialData, newStatus });
+        }
     } catch (err) {
         console.log("Error:", err);
         res.status(500).json({ message: "Internal server error. Uh oh!" });
