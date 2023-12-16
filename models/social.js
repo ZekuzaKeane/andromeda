@@ -40,16 +40,12 @@ Social.init(
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
-    }, picture: {
+    }, 
+    picture: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
     },
-    // steam: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    //   unique: true,
-    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -57,13 +53,6 @@ Social.init(
         key: "id",
       },
     },
-    // user_status: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "status",
-    //     key: "status",
-    //   },
-    // },
   },
   {
     sequelize,
