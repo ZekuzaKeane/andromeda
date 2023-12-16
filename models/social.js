@@ -40,6 +40,10 @@ Social.init(
       type: DataTypes.STRING,
       allowNull: true,
       unique: true,
+    }, picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true,
     },
     // steam: {
     //   type: DataTypes.STRING,

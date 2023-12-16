@@ -195,5 +195,24 @@ router.post("/logout", (req, res) => {
 });
 
 
+document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+    e.preventDefault()
+    const form = new FormData(this)
+    
+    try {
+        const response = await fetch('/api/uploads', {
+            method: 'POST',
+            body: form
+        })
+        if (response.ok){
+            console.log('Picture uploaded')
+        } else {
+            console.log('Failed to upload')
+        }
+    } catch (error) {
+        console.log(error)
+    }
+});
+
 
 module.exports = router;

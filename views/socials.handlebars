@@ -97,16 +97,14 @@
         </div>
 
         <div class="form-group input-container">
-          <label for="social-status">Status:</label>
-          <input
-            type="text"
-            id="social-status"
-            placeholder="Share a status for others to see!"
-            name="status"
-            class="form-control"
-  
-          />
+          <label for="profile-picture">Upload Profile Picture:</label>
+          <form method = "POST" action ="/upload" enctype = "multipart/form-data">
+            <input type = "file" name = "image">
+            <input type = "submit">
+          </form>
+            
         </div>
+
 
         <button
           style="background-color: #43AA8B;"
